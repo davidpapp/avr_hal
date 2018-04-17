@@ -9,9 +9,9 @@
 #ifndef TIM16_H_
 #define TIM16_H_
 
-typedef volatile struct
+typedef struct
 {
-	volatile TCCRA;
+	volatile uint8_t TCCRA;
 	volatile uint8_t TCCRB;
 	volatile uint8_t TCCRC;
 	volatile uint8_t Reserved;
@@ -22,6 +22,9 @@ typedef volatile struct
 	volatile uint16_t OCRC;
 }TIM16_t;
 
-
+#define Tim16_1 ((volatile TIM16_t*) 0x80)
+#define Tim16_3 ((volatile TIM16_t *) 0x90 )
+#define Tim16_4 ((volatile TIM16_t*) 0xA0)
+#define Tim16_5 ((volatile TIM16_t*) 0x120)
 
 #endif /* TIM16_H_ */

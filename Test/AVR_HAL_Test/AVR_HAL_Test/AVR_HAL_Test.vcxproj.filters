@@ -18,9 +18,18 @@
     <ClInclude Include="forced_include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\tim16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TimTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GpioTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

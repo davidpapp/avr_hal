@@ -19,8 +19,6 @@ extern "C"
 {
 #endif
     extern uint8_t __avr_reg[ _HIGHEST_REGISTER_ADD ];
-    extern double __requested_delay_us;
-    extern void _delay_us( double delay_us );
 #ifdef __cplusplus
 }
 #endif

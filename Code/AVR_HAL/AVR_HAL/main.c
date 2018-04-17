@@ -6,10 +6,11 @@
  */ 
 
 #include <avr/io.h>
-
+#include "HAL/tim16.h"
 
 int main(void)
 {
+	Tim16_1->ICR = 0x0000;
     /* Replace with your application code */
     while (1) 
     {

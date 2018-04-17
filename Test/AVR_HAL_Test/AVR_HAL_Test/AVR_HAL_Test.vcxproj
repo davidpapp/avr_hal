@@ -19,10 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\tim16.h" />
     <ClInclude Include="forced_include.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GpioTest.cpp" />
     <ClCompile Include="TestMain.cpp" />
+    <ClCompile Include="TimTest.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -84,7 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <ForcedIncludeFiles>CppUTest/MemoryLeakDetectorMallocMacros.h;CppUTest/MemoryLeakDetectorNewMacros.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>CppUTest/MemoryLeakDetectorMallocMacros.h;CppUTest/MemoryLeakDetectorNewMacros.h;forced_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
