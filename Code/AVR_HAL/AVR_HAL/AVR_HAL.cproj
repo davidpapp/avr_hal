@@ -138,6 +138,9 @@
     <Compile Include="HAL\Gpio.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\Tim16.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\Tim16.h">
       <SubType>compile</SubType>
     </Compile>

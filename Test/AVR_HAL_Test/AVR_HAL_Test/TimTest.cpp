@@ -7,14 +7,14 @@ extern "C" {
 #include <time.h> 
 #include "../../../Code/AVR_HAL/AVR_HAL/HAL/tim16.h"
 	uint8_t __avr_reg[_HIGHEST_REGISTER_ADD];
-	double __requested_delay_us = 0.0;
+	TIM16_t *_tim = (TIM16_t*)(__avr_reg + 80);
 };
 
 TEST_GROUP(TEST_TIM)
 {
 	void setup( )
 	{
-
+		memset(__avr_reg, 0, _HIGHEST_REGISTER_ADD);
 	}
 
 	void teardown( )
@@ -58,4 +58,125 @@ TEST(TEST_TIM , Tim1AddressesAreCorrect)
 	CHECK_EQUAL_C_ULONG(0x8C , (uint32_t) &(Tim16_1->OCRC));
 }
 
+#pragma endregion
+
+#pragma region SetTests
+
+TEST(TEST_TIM , Set_WGMCanBeCalled)
+{
+	
+	set_wgm(_tim , WGM_NORMAL);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToNormal)
+{
+	set_wgm(_tim , WGM_NORMAL);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToPwmPc8)
+{
+	set_wgm(_tim , WGM_PWM_PC_8);
+	CHECK_EQUAL_C_UBYTE(0x01 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToPwmPc9)
+{
+	set_wgm(_tim , WGM_PWM_PC_9);
+	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToPwmPc10)
+{
+	set_wgm(_tim , WGM_PWM_PC_10);
+	CHECK_EQUAL_C_UBYTE(0x03 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToCtcOcra)
+{
+	set_wgm(_tim , WGM_CTC_OCRA);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x08 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToFastPwm8)
+{
+	set_wgm(_tim , WGM_FAST_PWM_8);
+	CHECK_EQUAL_C_UBYTE(0x01 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x08 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToFastPwm9)
+{
+	set_wgm(_tim , WGM_FAST_PWM_9);
+	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x08 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToFastPwm10)
+{
+	set_wgm(_tim , WGM_FAST_PWM_10);
+	CHECK_EQUAL_C_UBYTE(0x03 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x08 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToPwmPfcIcr)
+{
+	set_wgm(_tim , WGM_PWM_PFC_ICR);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x10 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToPwmPfcOcra)
+{
+	set_wgm(_tim , WGM_PWM_PFC_OCRA);
+	CHECK_EQUAL_C_UBYTE(0x01 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x10 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToPwmPcIcr)
+{
+	set_wgm(_tim , WGM_PWM_PC_ICR);
+	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x10 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToPwmPcOcra)
+{
+	set_wgm(_tim , WGM_PWM_PC_OCRA);
+	CHECK_EQUAL_C_UBYTE(0x03 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x10 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToCtcIcr)
+{
+	set_wgm(_tim , WGM_CTC_ICR);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x18 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToFastPwmIcr)
+{
+	set_wgm(_tim , WGM_FAST_PWM_ICR);
+	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x18 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMCanBeSetToFastPwmOcra)
+{
+	set_wgm(_tim , WGM_FAST_PWM_OCRA);
+	CHECK_EQUAL_C_UBYTE(0x03 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x18 , _tim->TCCRB);
+}
+
+TEST(TEST_TIM , Set_WGMToResevedIsSameAsNormal)
+{
+	set_wgm(_tim , WGM_RESERVED);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
+	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
+}
 #pragma endregion

@@ -32,5 +32,8 @@
     <ClCompile Include="GpioTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\Tim16.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

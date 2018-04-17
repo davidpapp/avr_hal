@@ -9,23 +9,25 @@
 #ifndef TIM16_H_
 #define TIM16_H_
 
-typedef struct
+#include <stdint.h>
+
+typedef volatile struct
 {
-	volatile uint8_t TCCRA;
-	volatile uint8_t TCCRB;
-	volatile uint8_t TCCRC;
-	volatile uint8_t Reserved;
-	volatile uint16_t TCNT;
-	volatile uint16_t ICR;
-	volatile uint16_t OCRA;
-	volatile uint16_t OCRB;
-	volatile uint16_t OCRC;
+	uint8_t TCCRA;
+	uint8_t TCCRB;
+	uint8_t TCCRC;
+	uint8_t Reserved;
+	uint16_t TCNT;
+	uint16_t ICR;
+	uint16_t OCRA;
+	uint16_t OCRB;
+	uint16_t OCRC;
 }TIM16_t;
 
-#define Tim16_1 ((volatile TIM16_t*) 0x80)
-#define Tim16_3 ((volatile TIM16_t *) 0x90 )
-#define Tim16_4 ((volatile TIM16_t*) 0xA0)
-#define Tim16_5 ((volatile TIM16_t*) 0x120)
+#define Tim16_1 ((TIM16_t*) 0x80)
+#define Tim16_3 ((TIM16_t *) 0x90 )
+#define Tim16_4 ((TIM16_t*) 0xA0)
+#define Tim16_5 ((TIM16_t*) 0x120)
 
 typedef enum
 {
@@ -33,7 +35,7 @@ typedef enum
 	WGM_PWM_PC_8,
 	WGM_PWM_PC_9,
 	WGM_PWM_PC_10,
-	WGM_CTC_OCR,
+	WGM_CTC_OCRA,
 	WGM_FAST_PWM_8,
 	WGM_FAST_PWM_9,
 	WGM_FAST_PWM_10,
@@ -42,8 +44,9 @@ typedef enum
 	WGM_PWM_PC_ICR,
 	WGM_PWM_PC_OCRA,
 	WGM_CTC_ICR,
+	WGM_RESERVED,
 	WGM_FAST_PWM_ICR,
-	WGM_FAST_PWM_OCR
+	WGM_FAST_PWM_OCRA
 }TIM_WGM_t;
 
 typedef enum
@@ -72,5 +75,7 @@ typedef enum
 	OCR_B,
 	OCR_C
 }TIM_OCR_t;
+
+void set_wgm(TIM16_t* timer, TIM_WGM_t mode);
 
 #endif /* TIM16_H_ */

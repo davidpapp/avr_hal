@@ -25,6 +25,7 @@ int main(void)
 	Tim16_5->TCCRA = 0x00;
 	Tim16_5->OCRB = 0x00B7;
 	Tim16_5->TCCRA = 0b00110010;
+
     /* Replace with your application code */
     while (1) 
     {

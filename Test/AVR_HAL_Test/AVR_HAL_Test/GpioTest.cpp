@@ -22,7 +22,7 @@ TEST_GROUP(TEST_GPIO)
 
 };
 
-#pragma region tim_memoy_mapping
+#pragma region gpio_memoy_mapping
 TEST(TEST_GPIO , GPIOAIsDefined)
 {
 	GPIOA;
@@ -58,5 +58,4 @@ TEST(TEST_GPIO , GPIOHAddressesAreCorrect)
 	CHECK_EQUAL_C_ULONG(0x101 , (uint32_t) &(GPIOH->DDR));
 	CHECK_EQUAL_C_ULONG(0x102 , (uint32_t) &(GPIOH->PORT));
 }
-
 #pragma endregion
