@@ -28,5 +28,7 @@ typedef struct
 #define GPIOK ((volatile GPIO_t*) 0x106)
 #define GPIOL ((volatile GPIO_t*) 0x109)
 
+void GPIO_set_input(GPIO_t *port, uint8_t pin_mask);
+void GPIO_set_output(GPIO_t *port, uint8_t pin_mask);
 
 #endif /* GPIO_H_ */
