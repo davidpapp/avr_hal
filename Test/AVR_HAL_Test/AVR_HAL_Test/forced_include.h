@@ -2,10 +2,14 @@
 #define FORCED_H_
 
 #include <stdint.h>
+
+#define _TestHarness
+
 #define __AVR_ATmega2560__
 #define __AVR_LIBC_DEPRECATED_ENABLE__
 #define _AVR_SFR_DEFS_H_ 1
 #define _UTIL_DELAY_H_ 1
+
 
 #define F_CPU 10000000UL  // 10 MHz
 

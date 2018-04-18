@@ -1,0 +1,73 @@
+\hypertarget{group__keys}{}\section{Keys driver}
+\label{group__keys}\index{Keys driver@{Keys driver}}
+
+
+Key functions.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__keys_ga0b95c960c96ebb5f5b0560c673d6fa61}{key\+\_\+create}} (void($\ast$cb)(uint8\+\_\+t))
+\begin{DoxyCompactList}\small\item\em Constructor function for keys driver. \end{DoxyCompactList}\item 
+gpio\+\_\+state\+\_\+t \mbox{\hyperlink{group__keys_ga0494c33f8f3e276417da0a24771af467}{key\+\_\+get\+\_\+key}} (uint8\+\_\+t key\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Reads the state of a key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Key functions. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__keys_ga0b95c960c96ebb5f5b0560c673d6fa61}\label{group__keys_ga0b95c960c96ebb5f5b0560c673d6fa61}} 
+\index{Keys driver@{Keys driver}!key\+\_\+create@{key\+\_\+create}}
+\index{key\+\_\+create@{key\+\_\+create}!Keys driver@{Keys driver}}
+\subsubsection{\texorpdfstring{key\+\_\+create()}{key\_create()}}
+{\footnotesize\ttfamily void key\+\_\+create (\begin{DoxyParamCaption}\item[{void($\ast$)(uint8\+\_\+t)}]{cb }\end{DoxyParamCaption})}
+
+
+
+Constructor function for keys driver. 
+
+Sets up the P\+C0-\/5 pins as simple inputs and the P\+D2-\/3 pins as external interrupts.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cb} & function pointer to the interrupt callback function\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Must be called once before the keys functions must be used! 
+
+To use the interrupts sei() must be called after this function! 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__keys_ga0494c33f8f3e276417da0a24771af467}\label{group__keys_ga0494c33f8f3e276417da0a24771af467}} 
+\index{Keys driver@{Keys driver}!key\+\_\+get\+\_\+key@{key\+\_\+get\+\_\+key}}
+\index{key\+\_\+get\+\_\+key@{key\+\_\+get\+\_\+key}!Keys driver@{Keys driver}}
+\subsubsection{\texorpdfstring{key\+\_\+get\+\_\+key()}{key\_get\_key()}}
+{\footnotesize\ttfamily gpio\+\_\+state\+\_\+t key\+\_\+get\+\_\+key (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{key\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Reads the state of a key. 
+
+Reads the pin input registers and returns the state of the pin.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key\+\_\+no} & number of the key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gpio\+\_\+state\+\_\+t 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em G\+P\+I\+O\+\_\+\+O\+FF} & Key is not pressed \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+ON} & Key is pressed \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+U\+N\+K\+N\+O\+WN} & State is unknown, may indicate error \\
+\hline
+\end{DoxyRetVals}

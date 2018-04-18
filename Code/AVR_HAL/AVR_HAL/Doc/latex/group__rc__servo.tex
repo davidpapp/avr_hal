@@ -1,0 +1,56 @@
+\hypertarget{group__rc__servo}{}\section{RC Servo driver}
+\label{group__rc__servo}\index{R\+C Servo driver@{R\+C Servo driver}}
+
+
+RC Servo functions.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__rc__servo_ga5ff21bd667dd34d74d363cb84d8d6626}{rc\+\_\+servo\+\_\+create}} ()
+\begin{DoxyCompactList}\small\item\em Constructor function for rc\+\_\+servo driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__rc__servo_ga9965d379cdb28b35126dcb75adf400c3}{rc\+\_\+servo}} (int8\+\_\+t percent)
+\begin{DoxyCompactList}\small\item\em Sets the servo to a position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+RC Servo functions. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__rc__servo_ga9965d379cdb28b35126dcb75adf400c3}\label{group__rc__servo_ga9965d379cdb28b35126dcb75adf400c3}} 
+\index{R\+C Servo driver@{R\+C Servo driver}!rc\+\_\+servo@{rc\+\_\+servo}}
+\index{rc\+\_\+servo@{rc\+\_\+servo}!R\+C Servo driver@{R\+C Servo driver}}
+\subsubsection{\texorpdfstring{rc\+\_\+servo()}{rc\_servo()}}
+{\footnotesize\ttfamily void rc\+\_\+servo (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{percent }\end{DoxyParamCaption})}
+
+
+
+Sets the servo to a position. 
+
+Percentage translates the following way\+: -\/100 -\/$>$ 1ms pulse 0 -\/$>$ 1.\+5ms pulse 100 -\/$>$ 2ms pulse
+
+Values of $<$-\/100 and $>$100 are ignored.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em percent} & position percentage \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__rc__servo_ga5ff21bd667dd34d74d363cb84d8d6626}\label{group__rc__servo_ga5ff21bd667dd34d74d363cb84d8d6626}} 
+\index{R\+C Servo driver@{R\+C Servo driver}!rc\+\_\+servo\+\_\+create@{rc\+\_\+servo\+\_\+create}}
+\index{rc\+\_\+servo\+\_\+create@{rc\+\_\+servo\+\_\+create}!R\+C Servo driver@{R\+C Servo driver}}
+\subsubsection{\texorpdfstring{rc\+\_\+servo\+\_\+create()}{rc\_servo\_create()}}
+{\footnotesize\ttfamily void rc\+\_\+servo\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor function for rc\+\_\+servo driver. 
+
+Initialize the pin P\+L4 as output and sets the T\+I\+M\+E\+R5 with 20ms period. It sets the O\+C\+RB as output with 1.\+5 ms.
+
+\begin{DoxyNote}{Note}
+Must be called once before the rc\+\_\+servo functions must be used! 
+\end{DoxyNote}

@@ -5,7 +5,7 @@
 
 extern "C" {
 #include <time.h> 
-#include "../../../Code/AVR_HAL/AVR_HAL/HAL/tim16.h"
+#include "tim16.h"
 	uint8_t __avr_reg[_HIGHEST_REGISTER_ADD];
 	TIM16_t *_tim = (TIM16_t*)(__avr_reg + 80);
 };
@@ -62,138 +62,138 @@ TEST(TEST_TIM , Tim1AddressesAreCorrect)
 
 #pragma region WGM_Tests
 
-TEST(TEST_TIM , Set_WGMCanBeCalled)
+TEST(TEST_TIM , TIM16_TIM16_set_WGMCanBeCalled)
 {
-	set_wgm(_tim , WGM_NORMAL);
+	TIM16_set_wgm(_tim , WGM_NORMAL);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToNormal)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToNormal)
 {
-	set_wgm(_tim , WGM_NORMAL);
+	TIM16_set_wgm(_tim , WGM_NORMAL);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToPwmPc8)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToPwmPc8)
 {
-	set_wgm(_tim , WGM_PWM_PC_8);
+	TIM16_set_wgm(_tim , WGM_PWM_PC_8);
 	CHECK_EQUAL_C_UBYTE(0x01 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToPwmPc9)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToPwmPc9)
 {
-	set_wgm(_tim , WGM_PWM_PC_9);
+	TIM16_set_wgm(_tim , WGM_PWM_PC_9);
 	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToPwmPc10)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToPwmPc10)
 {
-	set_wgm(_tim , WGM_PWM_PC_10);
+	TIM16_set_wgm(_tim , WGM_PWM_PC_10);
 	CHECK_EQUAL_C_UBYTE(0x03 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToCtcOcra)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToCtcOcra)
 {
-	set_wgm(_tim , WGM_CTC_OCRA);
+	TIM16_set_wgm(_tim , WGM_CTC_OCRA);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x08 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToFastPwm8)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToFastPwm8)
 {
-	set_wgm(_tim , WGM_FAST_PWM_8);
+	TIM16_set_wgm(_tim , WGM_FAST_PWM_8);
 	CHECK_EQUAL_C_UBYTE(0x01 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x08 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToFastPwm9)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToFastPwm9)
 {
-	set_wgm(_tim , WGM_FAST_PWM_9);
+	TIM16_set_wgm(_tim , WGM_FAST_PWM_9);
 	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x08 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToFastPwm10)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToFastPwm10)
 {
-	set_wgm(_tim , WGM_FAST_PWM_10);
+	TIM16_set_wgm(_tim , WGM_FAST_PWM_10);
 	CHECK_EQUAL_C_UBYTE(0x03 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x08 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToPwmPfcIcr)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToPwmPfcIcr)
 {
-	set_wgm(_tim , WGM_PWM_PFC_ICR);
+	TIM16_set_wgm(_tim , WGM_PWM_PFC_ICR);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x10 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToPwmPfcOcra)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToPwmPfcOcra)
 {
-	set_wgm(_tim , WGM_PWM_PFC_OCRA);
+	TIM16_set_wgm(_tim , WGM_PWM_PFC_OCRA);
 	CHECK_EQUAL_C_UBYTE(0x01 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x10 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToPwmPcIcr)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToPwmPcIcr)
 {
-	set_wgm(_tim , WGM_PWM_PC_ICR);
+	TIM16_set_wgm(_tim , WGM_PWM_PC_ICR);
 	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x10 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToPwmPcOcra)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToPwmPcOcra)
 {
-	set_wgm(_tim , WGM_PWM_PC_OCRA);
+	TIM16_set_wgm(_tim , WGM_PWM_PC_OCRA);
 	CHECK_EQUAL_C_UBYTE(0x03 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x10 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToCtcIcr)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToCtcIcr)
 {
-	set_wgm(_tim , WGM_CTC_ICR);
+	TIM16_set_wgm(_tim , WGM_CTC_ICR);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x18 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToFastPwmIcr)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToFastPwmIcr)
 {
-	set_wgm(_tim , WGM_FAST_PWM_ICR);
+	TIM16_set_wgm(_tim , WGM_FAST_PWM_ICR);
 	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x18 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMCanBeSetToFastPwmOcra)
+TEST(TEST_TIM , TIM16_set_WGMCanBeSetToFastPwmOcra)
 {
-	set_wgm(_tim , WGM_FAST_PWM_OCRA);
+	TIM16_set_wgm(_tim , WGM_FAST_PWM_OCRA);
 	CHECK_EQUAL_C_UBYTE(0x03 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x18 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_WGMToResevedIsSameAsNormal)
+TEST(TEST_TIM , TIM16_set_WGMToResevedIsSameAsNormal)
 {
-	set_wgm(_tim , WGM_RESERVED);
+	TIM16_set_wgm(_tim , WGM_RESERVED);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 }
 
 TEST(TEST_TIM , GWMCanBeReset)
 {
-	set_wgm(_tim , WGM_FAST_PWM_ICR);
+	TIM16_set_wgm(_tim , WGM_FAST_PWM_ICR);
 	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x18 , _tim->TCCRB);
 
-	set_wgm(_tim , WGM_PWM_PC_9);
+	TIM16_set_wgm(_tim , WGM_PWM_PC_9);
 	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 
-	set_wgm(_tim , WGM_RESERVED);
+	TIM16_set_wgm(_tim , WGM_RESERVED);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 
-	set_wgm(_tim , WGM_NORMAL);
+	TIM16_set_wgm(_tim , WGM_NORMAL);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 }
@@ -201,163 +201,163 @@ TEST(TEST_TIM , GWMCanBeReset)
 
 #pragma region CS_Tests
 
-TEST(TEST_TIM , Set_CSCanBeCalled)
+TEST(TEST_TIM , TIM16_set_CSCanBeCalled)
 {
-	set_cs(_tim , CS_NO_CLK);
+	TIM16_set_cs(_tim , CS_NO_CLK);
 }
 
-TEST(TEST_TIM , Set_CSCanBeSetToNoCLK)
+TEST(TEST_TIM , TIM16_set_CSCanBeSetToNoCLK)
 {
-	set_cs(_tim , CS_NO_CLK);
+	TIM16_set_cs(_tim , CS_NO_CLK);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_CSCanBeSetToCLKDiv1)
+TEST(TEST_TIM , TIM16_set_CSCanBeSetToCLKDiv1)
 {
-	set_cs(_tim , CS_CLK_DIV1);
+	TIM16_set_cs(_tim , CS_CLK_DIV1);
 	CHECK_EQUAL_C_UBYTE(0x01 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_CSCanBeSetToCLKDiv8)
+TEST(TEST_TIM , TIM16_set_CSCanBeSetToCLKDiv8)
 {
-	set_cs(_tim , CS_CLK_DIV8);
+	TIM16_set_cs(_tim , CS_CLK_DIV8);
 	CHECK_EQUAL_C_UBYTE(0x02 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_CSCanBeSetToCLKDiv64)
+TEST(TEST_TIM , TIM16_set_CSCanBeSetToCLKDiv64)
 {
-	set_cs(_tim , CS_CLK_DIV64);
+	TIM16_set_cs(_tim , CS_CLK_DIV64);
 	CHECK_EQUAL_C_UBYTE(0x03 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_CSCanBeSetToCLKDiv256)
+TEST(TEST_TIM , TIM16_set_CSCanBeSetToCLKDiv256)
 {
-	set_cs(_tim , CS_CLK_DIV256);
+	TIM16_set_cs(_tim , CS_CLK_DIV256);
 	CHECK_EQUAL_C_UBYTE(0x04 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_CSCanBeSetToCLKDiv1024)
+TEST(TEST_TIM , TIM16_set_CSCanBeSetToCLKDiv1024)
 {
-	set_cs(_tim , CS_CLK_DIV1024);
+	TIM16_set_cs(_tim , CS_CLK_DIV1024);
 	CHECK_EQUAL_C_UBYTE(0x05 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_CSCanBeSetToExtFalling)
+TEST(TEST_TIM , TIM16_set_CSCanBeSetToExtFalling)
 {
-	set_cs(_tim , CS_EXT_FALLING);
+	TIM16_set_cs(_tim , CS_EXT_FALLING);
 	CHECK_EQUAL_C_UBYTE(0x06 , _tim->TCCRB);
 }
 
-TEST(TEST_TIM , Set_CSCanBeSetToExtRising)
+TEST(TEST_TIM , TIM16_set_CSCanBeSetToExtRising)
 {
-	set_cs(_tim , CS_EXT_RISING);
+	TIM16_set_cs(_tim , CS_EXT_RISING);
 	CHECK_EQUAL_C_UBYTE(0x07 , _tim->TCCRB);
 }
 
 TEST(TEST_TIM , SCSCanBeReset)
 {
-	set_cs(_tim , CS_EXT_FALLING);
+	TIM16_set_cs(_tim , CS_EXT_FALLING);
 	CHECK_EQUAL_C_UBYTE(0x06 , _tim->TCCRB);
 
-	set_cs(_tim , CS_CLK_DIV256);
+	TIM16_set_cs(_tim , CS_CLK_DIV256);
 	CHECK_EQUAL_C_UBYTE(0x04 , _tim->TCCRB);
 
-	set_cs(_tim , CS_NO_CLK);
+	TIM16_set_cs(_tim , CS_NO_CLK);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRB);
 }
 #pragma endregion
 
 #pragma region COM_Tests
 
-TEST(TEST_TIM , Set_COMCanBeCalled)
+TEST(TEST_TIM , TIM16_set_COMCanBeCalled)
 {
-	set_com(_tim , OCR_A, COM_NORMAL);
+	TIM16_set_com(_tim , OCR_A, COM_NORMAL);
 }
 
 TEST(TEST_TIM , ChannelACanBeSetNormal)
 {
-	set_com(_tim , OCR_A , COM_NORMAL);
+	TIM16_set_com(_tim , OCR_A , COM_NORMAL);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelBCanBeSetNormal)
 {
-	set_com(_tim , OCR_B , COM_NORMAL);
+	TIM16_set_com(_tim , OCR_B , COM_NORMAL);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelCCanBeSetNormal)
 {
-	set_com(_tim , OCR_C , COM_NORMAL);
+	TIM16_set_com(_tim , OCR_C , COM_NORMAL);
 	CHECK_EQUAL_C_UBYTE(0x00 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelACanBeSetToToggle)
 {
-	set_com(_tim , OCR_A , COM_TOGGLE);
+	TIM16_set_com(_tim , OCR_A , COM_TOGGLE);
 	CHECK_EQUAL_C_UBYTE(0x40 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelBCanBeSetToToggle)
 {
-	set_com(_tim , OCR_B , COM_TOGGLE);
+	TIM16_set_com(_tim , OCR_B , COM_TOGGLE);
 	CHECK_EQUAL_C_UBYTE(0x10 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelCCanBeSetToToggle)
 {
-	set_com(_tim , OCR_C , COM_TOGGLE);
+	TIM16_set_com(_tim , OCR_C , COM_TOGGLE);
 	CHECK_EQUAL_C_UBYTE(0x04 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelACanBeSetToClear)
 {
-	set_com(_tim , OCR_A , COM_CLEAR);
+	TIM16_set_com(_tim , OCR_A , COM_CLEAR);
 	CHECK_EQUAL_C_UBYTE(0x80 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelBCanBeSetToClear)
 {
-	set_com(_tim , OCR_B , COM_CLEAR);
+	TIM16_set_com(_tim , OCR_B , COM_CLEAR);
 	CHECK_EQUAL_C_UBYTE(0x20 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelCCanBeSetToClear)
 {
-	set_com(_tim , OCR_C , COM_CLEAR);
+	TIM16_set_com(_tim , OCR_C , COM_CLEAR);
 	CHECK_EQUAL_C_UBYTE(0x08 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelACanBeSetToSet)
 {
-	set_com(_tim , OCR_A , COM_SET);
+	TIM16_set_com(_tim , OCR_A , COM_SET);
 	CHECK_EQUAL_C_UBYTE(0xC0 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelBCanBeSetToSet)
 {
-	set_com(_tim , OCR_B , COM_SET);
+	TIM16_set_com(_tim , OCR_B , COM_SET);
 	CHECK_EQUAL_C_UBYTE(0x30 , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelCCanBeSetToSet)
 {
-	set_com(_tim , OCR_C , COM_SET);
+	TIM16_set_com(_tim , OCR_C , COM_SET);
 	CHECK_EQUAL_C_UBYTE(0x0C , _tim->TCCRA);
 }
 
 TEST(TEST_TIM , ChannelSetIsIndependent)
 {
-	set_com(_tim , OCR_A , COM_SET);
+	TIM16_set_com(_tim , OCR_A , COM_SET);
 	CHECK_EQUAL_C_UBYTE(0xC0 , _tim->TCCRA);
 
-	set_com(_tim , OCR_B , COM_TOGGLE);
+	TIM16_set_com(_tim , OCR_B , COM_TOGGLE);
 	CHECK_EQUAL_C_UBYTE(0xD0 , _tim->TCCRA);
 
-	set_com(_tim , OCR_C , COM_CLEAR);
+	TIM16_set_com(_tim , OCR_C , COM_CLEAR);
 	CHECK_EQUAL_C_UBYTE(0xD8 , _tim->TCCRA);
 
-	set_com(_tim , OCR_A , COM_NORMAL);
+	TIM16_set_com(_tim , OCR_A , COM_NORMAL);
 	CHECK_EQUAL_C_UBYTE(0x18 , _tim->TCCRA);
 }
 #pragma endregion

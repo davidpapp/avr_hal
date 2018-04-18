@@ -19,18 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EINT.h" />
     <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\tim16.h" />
     <ClInclude Include="forced_include.h">
       <DeploymentContent>true</DeploymentContent>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EINT.c" />
     <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\Tim16.c">
       <DeploymentContent>false</DeploymentContent>
     </ClCompile>
+    <ClCompile Include="EINT_Test.cpp" />
     <ClCompile Include="GpioTest.cpp" />
     <ClCompile Include="TestMain.cpp" />
-    <ClCompile Include="TimTest.cpp" />
+    <ClCompile Include="TIM16_Test.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -84,7 +87,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\David\Documents\HWP\avr_hal\Test\AVR_HAL_Test\AVR_HAL_Test;D:\cpputest-master\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(IncludePath);C:\Users\David\Documents\HWP\avr_hal\Test\AVR_HAL_Test\AVR_HAL_Test;C:\Users\David\Documents\HWP\avr_hal\Code\AVR_HAL\AVR_HAL\HAL;D:\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include;D:\cpputest-master\include</IncludePath>
+    <LibraryPath>D:\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

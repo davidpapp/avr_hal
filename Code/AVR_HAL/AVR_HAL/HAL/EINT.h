@@ -32,5 +32,6 @@ typedef enum
 void EINT_enable(EINT_INT_t ext_int);
 void EINT_disable(EINT_INT_t ext_int);
 void EINT_set_sense(EINT_INT_t ext_int, EINT_ISC_t sense_type);
+void EINT_set_callback(void (*cb)(uint8_t));
 
 #endif /* EINT_H_ */

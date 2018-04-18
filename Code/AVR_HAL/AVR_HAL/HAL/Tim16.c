@@ -7,7 +7,7 @@
 
  #include "tim16.h"
 
- void set_wgm(TIM16_t* timer, TIM_WGM_t mode)
+ void TIM16_set_wgm(TIM16_t* timer, TIM_WGM_t mode)
  {
 	 if (mode == WGM_RESERVED)
 	 {
@@ -22,14 +22,14 @@
 	 timer->TCCRB = buf | ((mode & 0xC) << 1);
  }
 
- void set_cs(TIM16_t* timer , TIM_CS_t clock_source)
+ void TIM16_set_cs(TIM16_t* timer , TIM_CS_t clock_source)
  {
 	uint8_t buf = timer->TCCRB;
 	buf &= 0xF8;
 	timer->TCCRB = buf | clock_source;
  }
 
- void set_com(TIM16_t* timer , TIM_OCR_t channel , TIM_COM_t out_mode)
+ void TIM16_set_com(TIM16_t* timer , TIM_OCR_t channel , TIM_COM_t out_mode)
  {
 	 uint8_t channel_offset = 8;
 	 switch (channel)

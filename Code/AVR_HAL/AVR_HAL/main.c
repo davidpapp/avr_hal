@@ -6,26 +6,45 @@
  */ 
 
 #include <avr/io.h>
+#include <avr/interrupt.h>
 #include "HAL/tim16.h"
-#include "HAL/Gpio.h"
+#include "HAL/GPIO.h"
+#include "HAL/EINT.h"
+#include "HWP/rc_servo.h"
+#include "HWP/key.h"
+
+static int8_t _rc_servo_position = 0;
+
+void key_callback(uint8_t key)
+{
+	if (key == EINT_2)
+	{
+		_rc_servo_position -= 10;
+		if (_rc_servo_position < -100)
+		{
+			_rc_servo_position = -100;
+		}
+	}
+	else if (key == EINT_3)
+	{
+		_rc_servo_position += 10;
+		if (_rc_servo_position > 100)
+		{
+			_rc_servo_position = 100;
+		}
+	}
+	rc_servo(_rc_servo_position);
+}
 
 int main(void)
 {
-	GPIOL->DDR = 0xFF;
+	key_create(key_callback);
 
-	Tim16_5->ICR = 0x9C3F;
-	Tim16_5->OCRA = 0x0000;
-	Tim16_5->OCRB = 0x0BB7;
-	Tim16_5->OCRC = 0x0000;
+	rc_servo_create();
+	rc_servo(_rc_servo_position);
 
-	set_com(Tim16_5, OCR_A, COM_NORMAL);
-	set_com(Tim16_5, OCR_B, COM_SET);
-	set_com(Tim16_5, OCR_C, COM_NORMAL);
+	sei();
 
-	set_wgm(Tim16_5,WGM_FAST_PWM_ICR);
-	set_cs(Tim16_5, CS_CLK_DIV8);
-
-    /* Replace with your application code */
     while (1) 
     {
 		

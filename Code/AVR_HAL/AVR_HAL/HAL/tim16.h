@@ -76,8 +76,8 @@ typedef enum
 	OCR_C
 }TIM_OCR_t;
 
-void set_wgm(TIM16_t* timer, TIM_WGM_t mode);
-void set_cs(TIM16_t* timer , TIM_CS_t clock_source);
-void set_com(TIM16_t* timer , TIM_OCR_t channel, TIM_COM_t out_mode);
+void TIM16_set_wgm(TIM16_t* timer, TIM_WGM_t mode);
+void TIM16_set_cs(TIM16_t* timer , TIM_CS_t clock_source);
+void TIM16_set_com(TIM16_t* timer , TIM_OCR_t channel, TIM_COM_t out_mode);
 
 #endif /* TIM16_H_ */
