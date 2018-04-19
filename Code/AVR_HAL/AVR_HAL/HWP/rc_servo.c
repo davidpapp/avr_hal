@@ -66,7 +66,7 @@ void rc_servo(int8_t percent)
 		period += 100;
 		period *= 10;
 		period += 0x7CF;
-		
+
 		volatile uint8_t sreg_buffer = _SFR_IO8(0x3F);
 		cli();
 		Tim16_5->OCRB = (uint16_t)period;

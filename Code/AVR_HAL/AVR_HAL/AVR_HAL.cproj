@@ -147,6 +147,9 @@
     <Compile Include="HAL\EINT.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\Tim16.c">
       <SubType>compile</SubType>
     </Compile>
