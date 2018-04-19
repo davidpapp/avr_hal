@@ -6,8 +6,7 @@
 extern "C" {
 #include <time.h> 
 #include "tim16.h"
-	uint8_t __avr_reg[_HIGHEST_REGISTER_ADD];
-	TIM16_t *_tim = (TIM16_t*)(__avr_reg + 80);
+	static TIM16_t *_tim = (TIM16_t*)(__avr_reg + 80);
 };
 
 TEST_GROUP(TEST_TIM)

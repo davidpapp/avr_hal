@@ -24,6 +24,9 @@
     <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EXT_INT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\SPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestMain.cpp">
@@ -42,6 +45,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EXT_INT.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPI_Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\SPI.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

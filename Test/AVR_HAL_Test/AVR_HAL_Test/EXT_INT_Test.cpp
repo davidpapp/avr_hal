@@ -623,7 +623,7 @@ TEST(TEST_EINT , CanBeReset)
 
 #pragma region Callback_Tests
 
-TEST(TEST_EINT , Set_CallbackCabBeCalled)
+TEST(TEST_EINT , Set_CallbackCanBeCalled)
 {
 	EXT_INT_set_callback(do_nothing);
 }

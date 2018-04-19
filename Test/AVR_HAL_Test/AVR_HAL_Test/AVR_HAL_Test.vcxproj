@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EXT_INT.h" />
+    <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\SPI.h" />
     <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\tim16.h" />
     <ClInclude Include="forced_include.h">
       <DeploymentContent>true</DeploymentContent>
@@ -27,11 +28,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EXT_INT.c" />
+    <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\SPI.c" />
     <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\Tim16.c">
       <DeploymentContent>false</DeploymentContent>
     </ClCompile>
     <ClCompile Include="EXT_INT_Test.cpp" />
     <ClCompile Include="GpioTest.cpp" />
+    <ClCompile Include="SPI_Test.cpp" />
     <ClCompile Include="TestMain.cpp" />
     <ClCompile Include="TIM16_Test.cpp" />
   </ItemGroup>
