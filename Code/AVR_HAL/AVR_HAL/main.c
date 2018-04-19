@@ -9,7 +9,7 @@
 #include <avr/interrupt.h>
 #include "HAL/tim16.h"
 #include "HAL/GPIO.h"
-#include "HAL/EINT.h"
+#include "HAL/EXT_INT.h"
 #include "HWP/rc_servo.h"
 #include "HWP/key.h"
 
@@ -17,7 +17,7 @@ static int8_t _rc_servo_position = 0;
 
 void key_callback(uint8_t key)
 {
-	if (key == EINT_2)
+	if (key == EXT_INT_2)
 	{
 		_rc_servo_position -= 10;
 		if (_rc_servo_position < -100)
@@ -25,7 +25,7 @@ void key_callback(uint8_t key)
 			_rc_servo_position = -100;
 		}
 	}
-	else if (key == EINT_3)
+	else if (key == EXT_INT_3)
 	{
 		_rc_servo_position += 10;
 		if (_rc_servo_position > 100)

@@ -13,7 +13,7 @@
  @brief Key functions
  */
 
- #include "../HAL/EINT.h"
+ #include "../HAL/EXT_INT.h"
  #include "../HAL/Gpio.h"
  #include "key.h"
 
@@ -37,11 +37,11 @@
 	GPIOC->DDR &= 0x3F;
 	GPIOD->PORT |= 0xC0;
 
-	EINT_set_sense(EINT_2, ISC_RISING);
-	EINT_set_sense(EINT_3, ISC_RISING);
-	EINT_set_callback(cb);
-	EINT_enable(EINT_2);
-	EINT_enable(EINT_3);
+	EXT_INT_set_sense(EXT_INT_2, EXT_INT_ISC_FALLING);
+	EXT_INT_set_sense(EXT_INT_3, EXT_INT_ISC_FALLING);
+	EXT_INT_set_callback(cb);
+	EXT_INT_enable(EXT_INT_2);
+	EXT_INT_enable(EXT_INT_3);
  }
 
  /*!

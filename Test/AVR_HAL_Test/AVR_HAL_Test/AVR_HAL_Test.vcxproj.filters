@@ -21,7 +21,7 @@
     <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\tim16.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EINT.h">
+    <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EXT_INT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,10 +38,10 @@
     <ClCompile Include="TIM16_Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EINT_Test.cpp">
+    <ClCompile Include="EXT_INT_Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EINT.c">
+    <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\EXT_INT.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

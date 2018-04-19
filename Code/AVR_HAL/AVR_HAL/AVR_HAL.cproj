@@ -135,16 +135,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="HAL\EINT.c">
+    <Compile Include="HAL\EXT_INT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\EXT_INT.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\GPIO.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\GPIO.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="HAL\EINT.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\SPI.h">

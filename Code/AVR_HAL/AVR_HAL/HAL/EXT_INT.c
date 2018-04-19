@@ -8,29 +8,29 @@
  #include <avr/io.h>
  #include <stddef.h>
  #include <avr/interrupt.h>
- #include "EINT.h"
+ #include "EXT_INT.h"
 
  static void(*_cb)(uint8_t) = NULL;
 
- void EINT_enable(EINT_INT_t ext_int)
+ void EXT_INT_enable(EXT_INT_t ext_int)
  {
 	uint8_t buffer = EIMSK;
 	buffer |= (1 << ext_int);
 	EIMSK = buffer;
  }
 
- void EINT_disable(EINT_INT_t ext_int)
+ void EXT_INT_disable(EXT_INT_t ext_int)
  {
 	 uint8_t buffer = EIMSK;
 	 buffer &= ~(1 << ext_int);
 	 EIMSK = buffer;
  }
 
- void EINT_set_sense(EINT_INT_t ext_int, EINT_ISC_t sense_type)
+ void EXT_INT_set_sense(EXT_INT_t ext_int, EXT_INT_ISC_t sense_type)
  {
 	 volatile uint8_t *target_register = &EICRA;
 
-	 if (ext_int > EINT_3)
+	 if (ext_int > EXT_INT_3)
 	 {
 		 target_register = &EICRB;
 		 ext_int -= 4;
@@ -42,7 +42,7 @@
 	 *target_register = buffer | sense_type;
  }
 
- void EINT_set_callback(void(*cb)(uint8_t))
+ void EXT_INT_set_callback(void(*cb)(uint8_t))
  {
 	 _cb = cb;
  }
