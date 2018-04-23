@@ -22,12 +22,14 @@ typedef volatile struct
 	uint16_t OCRA;
 	uint16_t OCRB;
 	uint16_t OCRC;
-}TIM16_t;
+}TIM16_Control_t;
 
-#define Tim16_1 ((TIM16_t*) 0x80)
-#define Tim16_3 ((TIM16_t *) 0x90 )
-#define Tim16_4 ((TIM16_t*) 0xA0)
-#define Tim16_5 ((TIM16_t*) 0x120)
+typedef volatile struct
+{
+	TIM16_Control_t *p_Control;
+	uint8_t *p_TIMSK;
+	uint8_t *p_TIFR;
+}TIM16_t;
 
 typedef enum
 {

@@ -14,19 +14,19 @@
 		 mode = WGM_NORMAL;
 	 }
 
-	 uint8_t buf = timer->TCCRA;
+	 uint8_t buf = timer->p_Control->TCCRA;
 	 buf &= 0xFC;
-	 timer->TCCRA = buf | (mode & 0x3);
-	 buf = timer->TCCRB;
+	 timer->p_Control->TCCRA = buf | (mode & 0x3);
+	 buf = timer->p_Control->TCCRB;
 	 buf &= 0xE7;
-	 timer->TCCRB = buf | ((mode & 0xC) << 1);
+	 timer->p_Control->TCCRB = buf | ((mode & 0xC) << 1);
  }
 
  void TIM16_set_cs(TIM16_t* timer , TIM_CS_t clock_source)
  {
-	uint8_t buf = timer->TCCRB;
+	uint8_t buf = timer->p_Control->TCCRB;
 	buf &= 0xF8;
-	timer->TCCRB = buf | clock_source;
+	timer->p_Control->TCCRB = buf | clock_source;
  }
 
  void TIM16_set_com(TIM16_t* timer , TIM_OCR_t channel , TIM_COM_t out_mode)
@@ -47,7 +47,7 @@
 		 break;
 	 }
 
-	 uint8_t buf = timer->TCCRA;
+	 uint8_t buf = timer->p_Control->TCCRA;
 	 buf &= ~(0x03 << channel_offset);
-	 timer->TCCRA = buf | (out_mode << channel_offset);
+	 timer->p_Control->TCCRA = buf | (out_mode << channel_offset);
  }

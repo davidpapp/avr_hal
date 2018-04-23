@@ -5,9 +5,11 @@
  *  Author: David
  */ 
 
+ #include <stddef.h>
+ #include <avr/interrupt.h>
  #include "SPI.h"
 
-static void(*_cb)(void) = NULL;
+static void(*_spi_cb)(void) = NULL;
 
  void SPI_enable_interrupt(SPI_t* spi)
  {
@@ -68,16 +70,16 @@ static void(*_cb)(void) = NULL;
 
  void SPI_set_callback(void(*cb)(void))
  {
-	 _cb = cb;
+	 _spi_cb = cb;
  }
 
 #ifndef _TestHarness
 
  ISR(SPI_STC_vect)
  {
-	 if (_cb != NULL)
+	 if (_spi_cb != NULL)
 	 {
-		 _cb();
+		 _spi_cb();
 	 }
  }
 

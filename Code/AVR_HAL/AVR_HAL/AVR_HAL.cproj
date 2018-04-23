@@ -135,6 +135,9 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="HAL\ATMEGA2560_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\EXT_INT.c">
       <SubType>compile</SubType>
     </Compile>
@@ -147,13 +150,16 @@
     <Compile Include="HAL\GPIO.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\SPI.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\SPI.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\Tim16.c">
+    <Compile Include="HAL\TIM16.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\Tim16.h">
+    <Compile Include="HAL\TIM16.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HWP\key.c">

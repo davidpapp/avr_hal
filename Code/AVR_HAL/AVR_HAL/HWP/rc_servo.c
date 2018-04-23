@@ -4,12 +4,11 @@
  * Created: 2018. 04. 18. 21:42:13
  *  Author: David
  */ 
-
-
- #include "../HAL/tim16.h"
- #include "../HAL/Gpio.h"
  #include <avr/io.h>
-  #include <avr/interrupt.h>
+ #include <avr/interrupt.h>
+ #include "../HAL/ATMEGA2560_HAL.h"
+ #include "../HAL/TIM16.h"
+ #include "../HAL/Gpio.h"
 
  /*! 
  @file rc_servo.c
@@ -30,17 +29,17 @@
  */
  void rc_servo_create()
 {
-	Tim16_5->ICR = 0x9C3F;
-	Tim16_5->OCRA = 0x0000;
-	Tim16_5->OCRB = 0x0BB7;
-	Tim16_5->OCRC = 0x0000;
+	_TIM16_5.p_Control->ICR = 0x9C3F;
+	_TIM16_5.p_Control->OCRA = 0x0000;
+	_TIM16_5.p_Control->OCRB = 0x0BB7;
+	_TIM16_5.p_Control->OCRC = 0x0000;
 
-	TIM16_set_com(Tim16_5, OCR_A, COM_NORMAL);
-	TIM16_set_com(Tim16_5, OCR_B, COM_CLEAR);
-	TIM16_set_com(Tim16_5, OCR_C, COM_NORMAL);
+	TIM16_set_com(&_TIM16_5, OCR_A, COM_NORMAL);
+	TIM16_set_com(&_TIM16_5, OCR_B, COM_CLEAR);
+	TIM16_set_com(&_TIM16_5, OCR_C, COM_NORMAL);
 
-	TIM16_set_wgm(Tim16_5,WGM_FAST_PWM_ICR);
-	TIM16_set_cs(Tim16_5, CS_CLK_DIV8);
+	TIM16_set_wgm(&_TIM16_5,WGM_FAST_PWM_ICR);
+	TIM16_set_cs(&_TIM16_5, CS_CLK_DIV8);
 	
 	GPIOL->DDR |= 0x10;
 }
@@ -69,7 +68,7 @@ void rc_servo(int8_t percent)
 
 		volatile uint8_t sreg_buffer = _SFR_IO8(0x3F);
 		cli();
-		Tim16_5->OCRB = (uint16_t)period;
+		_TIM16_5.p_Control->OCRB = (uint16_t)period;
 		_SFR_IO8(0x3F) = sreg_buffer;
 	}
 }
