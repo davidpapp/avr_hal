@@ -13,8 +13,9 @@
 #include "HAL/SPI.h"
 #include "HWP/rc_servo.h"
 #include "HWP/key.h"
+#include "HWP/display_7_segment.h"
 
-const uint8_t _digits[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90, 0x88, 0x83, 0xC6, 0xA1, 0x86, 0x8E};
+//const uint8_t _digits[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90, 0x88, 0x83, 0xC6, 0xA1, 0x86, 0x8E};
 
 static int8_t _rc_servo_position = 0;
 static volatile SPI_t *_spi = ((SPI_t*) 0x4C);
@@ -58,16 +59,12 @@ void spi_callback(void)
 
 int main(void)
 {
-	_display[0] = _digits[11];
-	_display[1] = _digits[0];
-	_display[2] = _digits[0];
-	_display[3] = _digits[11];
-
+	/*
 	key_create(key_callback);
 
 	rc_servo_create();
 	rc_servo(_rc_servo_position);
-
+	
 	
 	GPIOB->DDR |= 0x07;
 	GPIOF->DDR |= 0x0F;
@@ -83,10 +80,12 @@ int main(void)
 	SPI_set_clock_rate(_spi, SPI_SCK_CLK_DIV128);
 	SPI_set_callback(spi_callback);
 	SPI_enable(_spi);
-	
+	*/
+	display_7_segment_create();
+
 	sei();
-	
-	_spi->SPI_SPDR = _display[0xFF];
+	display_7_segment(3145.126, 0);
+	//_spi->SPI_SPDR = _display[0xFF];
 
     while (1) 
     {

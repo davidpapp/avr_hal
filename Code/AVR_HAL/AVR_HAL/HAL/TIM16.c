@@ -7,6 +7,8 @@
 
  #include "tim16.h"
 
+ volatile TIM16_t _TIM16_5 = { (TIM16_Control_t*) 0x120, (uint8_t*) 0x73, (uint8_t*) 0x3A};
+
  void TIM16_set_wgm(TIM16_t* timer, TIM_WGM_t mode)
  {
 	 if (mode == WGM_RESERVED)

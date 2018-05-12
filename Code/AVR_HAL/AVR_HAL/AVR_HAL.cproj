@@ -150,6 +150,12 @@
     <Compile Include="HAL\GPIO.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\hal_utils.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\hal_utils.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\SPI.c">
       <SubType>compile</SubType>
     </Compile>
@@ -160,6 +166,18 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\TIM16.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TIM8.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TIM8.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HWP\display_7_segment_soft.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HWP\display_7_segment.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HWP\key.c">
@@ -177,10 +195,17 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="UTIL\float_converter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="UTIL\float_converter.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HAL" />
     <Folder Include="HWP" />
+    <Folder Include="UTIL" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

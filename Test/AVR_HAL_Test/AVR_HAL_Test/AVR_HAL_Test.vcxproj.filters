@@ -27,6 +27,12 @@
     <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\SPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\UTIL\float_converter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\TIM8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestMain.cpp">
@@ -51,6 +57,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\SPI.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\UTIL\float_converter.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatConverterTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TIM8_Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\AVR_HAL\AVR_HAL\HAL\TIM8.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
