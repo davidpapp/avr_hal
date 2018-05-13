@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rc_5fservo',['rc_servo',['../group__rc__servo.html#ga9965d379cdb28b35126dcb75adf400c3',1,'rc_servo(int8_t percent):&#160;rc_servo.c'],['../group__rc__servo.html#ga9965d379cdb28b35126dcb75adf400c3',1,'rc_servo(int8_t percent):&#160;rc_servo.c']]],
-  ['rc_5fservo_5fcreate',['rc_servo_create',['../group__rc__servo.html#ga5ff21bd667dd34d74d363cb84d8d6626',1,'rc_servo_create():&#160;rc_servo.c'],['../group__rc__servo.html#ga5ff21bd667dd34d74d363cb84d8d6626',1,'rc_servo_create():&#160;rc_servo.c']]]
+  ['key_5fcreate',['key_create',['../group__keys.html#ga0b95c960c96ebb5f5b0560c673d6fa61',1,'key_create(void(*cb)(uint8_t)):&#160;key.c'],['../group__keys.html#ga0b95c960c96ebb5f5b0560c673d6fa61',1,'key_create(void(*cb)(uint8_t)):&#160;key.c']]],
+  ['key_5fget_5fkey',['key_get_key',['../group__keys.html#ga0494c33f8f3e276417da0a24771af467',1,'key_get_key(uint8_t key_no):&#160;key.c'],['../group__keys.html#ga0494c33f8f3e276417da0a24771af467',1,'key_get_key(uint8_t key_no):&#160;key.c']]]
 ];

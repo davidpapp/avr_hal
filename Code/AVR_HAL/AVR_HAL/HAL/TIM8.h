@@ -5,6 +5,12 @@
  *  Author: David
  */ 
 
+  /*! 
+ @file TIM8.h
+ @brief Low level library to control the 8-bit timers of the ATMEGA2560
+ @author David Papp
+ @brief 8-bit timer definitions
+ */
 
 #ifndef TIM8_H_
 #define TIM8_H_

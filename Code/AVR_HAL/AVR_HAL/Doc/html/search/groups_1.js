@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rc_20servo_20driver',['RC Servo driver',['../group__rc__servo.html',1,'']]]
+  ['8_2dbit_20timer_20driver',['8-bit timer driver',['../group___t_i_m8.html',1,'']]]
 ];

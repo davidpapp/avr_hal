@@ -1,0 +1,40 @@
+\hypertarget{display__7__segment_8c}{}\section{H\+W\+P/display\+\_\+7\+\_\+segment.c File Reference}
+\label{display__7__segment_8c}\index{H\+W\+P/display\+\_\+7\+\_\+segment.\+c@{H\+W\+P/display\+\_\+7\+\_\+segment.\+c}}
+
+
+Library to control the 7-\/segment display on the arduino shield.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../\+H\+A\+L/\+A\+T\+M\+E\+G\+A2560\+\_\+\+H\+A\+L.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+H\+A\+L/\+Gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display\+\_\+7\+\_\+segment.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{display__7__segment_8c_a07c5c25aa69ac16dd2159e30bd4b13ab}\label{display__7__segment_8c_a07c5c25aa69ac16dd2159e30bd4b13ab}} 
+void {\bfseries character\+\_\+update\+\_\+callback} ()
+\item 
+\mbox{\Hypertarget{display__7__segment_8c_ae1945e6c62fac33c963eae319aa0b298}\label{display__7__segment_8c_ae1945e6c62fac33c963eae319aa0b298}} 
+void {\bfseries spi\+\_\+callback} (void)
+\item 
+void \mbox{\hyperlink{group__display_ga5be3842cd6594bf8a0b03986fa56b134}{display\+\_\+7\+\_\+segment\+\_\+create}} ()
+\begin{DoxyCompactList}\small\item\em Constructor function for 7-\/segment display driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__display_gadc40e19ce8637f7ae7361f589db1170d}{display\+\_\+7\+\_\+segment}} (float value, uint8\+\_\+t no\+\_\+of\+\_\+decimals)
+\begin{DoxyCompactList}\small\item\em Updates the display\textquotesingle{}s content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{display__7__segment_8c_a482cf546043042ccc2bc18cfe7d89779}\label{display__7__segment_8c_a482cf546043042ccc2bc18cfe7d89779}} 
+const uint8\+\_\+t {\bfseries \+\_\+digits} \mbox{[}$\,$\mbox{]} = \{0x\+C0, 0x\+F9, 0x\+A4, 0x\+B0, 0x99, 0x92, 0x82, 0x\+F8, 0x80, 0x90, 0x88, 0x83, 0x\+C6, 0x\+A1, 0x86, 0x8\+E\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Library to control the 7-\/segment display on the arduino shield. 
+
+\begin{DoxyAuthor}{Author}
+David Papp 
+\end{DoxyAuthor}

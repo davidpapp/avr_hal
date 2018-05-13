@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['rc_5fservo',['rc_servo',['../group__rc__servo.html#ga9965d379cdb28b35126dcb75adf400c3',1,'rc_servo(int8_t percent):&#160;rc_servo.c'],['../group__rc__servo.html#ga9965d379cdb28b35126dcb75adf400c3',1,'rc_servo(int8_t percent):&#160;rc_servo.c'],['../group__rc__servo.html',1,'(Global Namespace)']]],
-  ['rc_5fservo_2ec',['rc_servo.c',['../rc__servo_8c.html',1,'']]],
-  ['rc_5fservo_5fcreate',['rc_servo_create',['../group__rc__servo.html#ga5ff21bd667dd34d74d363cb84d8d6626',1,'rc_servo_create():&#160;rc_servo.c'],['../group__rc__servo.html#ga5ff21bd667dd34d74d363cb84d8d6626',1,'rc_servo_create():&#160;rc_servo.c']]]
+  ['display_5f7_5fsegment',['display_7_segment',['../group__display.html#gadc40e19ce8637f7ae7361f589db1170d',1,'display_7_segment(float value, uint8_t no_of_decimals):&#160;display_7_segment.c'],['../group__display.html#gadc40e19ce8637f7ae7361f589db1170d',1,'display_7_segment(float value, uint8_t no_of_decimals):&#160;display_7_segment.c']]],
+  ['display_5f7_5fsegment_2ec',['display_7_segment.c',['../display__7__segment_8c.html',1,'']]],
+  ['display_5f7_5fsegment_5fcreate',['display_7_segment_create',['../group__display.html#ga5be3842cd6594bf8a0b03986fa56b134',1,'display_7_segment_create():&#160;display_7_segment.c'],['../group__display.html#ga5be3842cd6594bf8a0b03986fa56b134',1,'display_7_segment_create():&#160;display_7_segment.c']]]
 ];

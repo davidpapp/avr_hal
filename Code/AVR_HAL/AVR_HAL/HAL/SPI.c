@@ -9,6 +9,8 @@
  #include <avr/interrupt.h>
  #include "SPI.h"
 
+volatile SPI_t *_SPI = ((SPI_t*) 0x4C);
+
 static void(*_spi_cb)(void) = NULL;
 
  void SPI_enable_interrupt(SPI_t* spi)

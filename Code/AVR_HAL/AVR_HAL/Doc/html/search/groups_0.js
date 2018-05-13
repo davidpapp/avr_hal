@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keys_20driver',['Keys driver',['../group__keys.html',1,'']]]
+  ['7_2dsegment_20display_20driver',['7-segment display driver',['../group__display.html',1,'']]]
 ];

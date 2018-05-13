@@ -1,0 +1,63 @@
+\hypertarget{group__display}{}\section{7-\/segment display driver}
+\label{group__display}\index{7-\/segment display driver@{7-\/segment display driver}}
+
+
+7-\/segment display functions  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__display_ga5be3842cd6594bf8a0b03986fa56b134}{display\+\_\+7\+\_\+segment\+\_\+create}} ()
+\begin{DoxyCompactList}\small\item\em Constructor function for 7-\/segment display driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__display_gadc40e19ce8637f7ae7361f589db1170d}{display\+\_\+7\+\_\+segment}} (float value, uint8\+\_\+t no\+\_\+of\+\_\+decimals)
+\begin{DoxyCompactList}\small\item\em Updates the display\textquotesingle{}s content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+7-\/segment display functions 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__display_gadc40e19ce8637f7ae7361f589db1170d}\label{group__display_gadc40e19ce8637f7ae7361f589db1170d}} 
+\index{7-\/segment display driver@{7-\/segment display driver}!display\+\_\+7\+\_\+segment@{display\+\_\+7\+\_\+segment}}
+\index{display\+\_\+7\+\_\+segment@{display\+\_\+7\+\_\+segment}!7-\/segment display driver@{7-\/segment display driver}}
+\subsubsection{\texorpdfstring{display\+\_\+7\+\_\+segment()}{display\_7\_segment()}}
+{\footnotesize\ttfamily void display\+\_\+7\+\_\+segment (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{uint8\+\_\+t}]{no\+\_\+of\+\_\+decimals }\end{DoxyParamCaption})}
+
+
+
+Updates the display\textquotesingle{}s content. 
+
+Updated the display to show the given value with a given number of fraction decimals. For example\+: display\+\_\+7\+\_\+segment(12.\+389,2) will display 12.\+39
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & the floating point number to be displayed \\
+\hline
+\mbox{\tt in}  & {\em no\+\_\+of\+\_\+decimals} & the number of fraction decimals to be shown \mbox{[}0...3\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If no\+\_\+of\+\_\+decimals $>$ 3 then 3 fraction decimals will be displayed 
+
+The displayed value is rounded 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__display_ga5be3842cd6594bf8a0b03986fa56b134}\label{group__display_ga5be3842cd6594bf8a0b03986fa56b134}} 
+\index{7-\/segment display driver@{7-\/segment display driver}!display\+\_\+7\+\_\+segment\+\_\+create@{display\+\_\+7\+\_\+segment\+\_\+create}}
+\index{display\+\_\+7\+\_\+segment\+\_\+create@{display\+\_\+7\+\_\+segment\+\_\+create}!7-\/segment display driver@{7-\/segment display driver}}
+\subsubsection{\texorpdfstring{display\+\_\+7\+\_\+segment\+\_\+create()}{display\_7\_segment\_create()}}
+{\footnotesize\ttfamily void display\+\_\+7\+\_\+segment\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor function for 7-\/segment display driver. 
+
+Sets up the P\+B0-\/2 and P\+F0-\/3 pins as outputs, set up the S\+PI if its use defined and sets up T\+I\+M0 to 400\+Hz for display character refresh.
+
+\begin{DoxyNote}{Note}
+Must be called once before any display functions must be used! 
+
+To use the interrupts sei() must be called after this function! 
+\end{DoxyNote}

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['key_5fcreate',['key_create',['../group__keys.html#ga0b95c960c96ebb5f5b0560c673d6fa61',1,'key_create(void(*cb)(uint8_t)):&#160;key.c'],['../group__keys.html#ga0b95c960c96ebb5f5b0560c673d6fa61',1,'key_create(void(*cb)(uint8_t)):&#160;key.c']]],
-  ['key_5fget_5fkey',['key_get_key',['../group__keys.html#ga0494c33f8f3e276417da0a24771af467',1,'key_get_key(uint8_t key_no):&#160;key.c'],['../group__keys.html#ga0494c33f8f3e276417da0a24771af467',1,'key_get_key(uint8_t key_no):&#160;key.c']]]
+  ['display_5f7_5fsegment',['display_7_segment',['../group__display.html#gadc40e19ce8637f7ae7361f589db1170d',1,'display_7_segment(float value, uint8_t no_of_decimals):&#160;display_7_segment.c'],['../group__display.html#gadc40e19ce8637f7ae7361f589db1170d',1,'display_7_segment(float value, uint8_t no_of_decimals):&#160;display_7_segment.c']]],
+  ['display_5f7_5fsegment_5fcreate',['display_7_segment_create',['../group__display.html#ga5be3842cd6594bf8a0b03986fa56b134',1,'display_7_segment_create():&#160;display_7_segment.c'],['../group__display.html#ga5be3842cd6594bf8a0b03986fa56b134',1,'display_7_segment_create():&#160;display_7_segment.c']]]
 ];

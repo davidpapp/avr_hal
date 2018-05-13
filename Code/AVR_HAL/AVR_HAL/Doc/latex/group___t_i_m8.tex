@@ -1,0 +1,151 @@
+\hypertarget{group___t_i_m8}{}\section{8-\/bit timer driver}
+\label{group___t_i_m8}\index{8-\/bit timer driver@{8-\/bit timer driver}}
+
+
+8-\/bit timer functions  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___t_i_m8_gac8d83739b9bf78c66d16de8d9a5f3a4e}{T\+I\+M8\+\_\+set\+\_\+wgm}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+W\+G\+M\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Sets the waveform generation mode (W\+GM) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_gaa68ae4ef1d87bbb8e3b2696de1a4740c}{T\+I\+M8\+\_\+set\+\_\+cs}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+C\+S\+\_\+t clock\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Sets the clock source (CS) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_ga9fc611aa062837337cdfd8a2d3953394}{T\+I\+M8\+\_\+set\+\_\+com}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+O\+C\+R\+\_\+t channel, T\+I\+M8\+\_\+\+C\+O\+M\+\_\+t out\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Sets the compare match output mode (C\+OM) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_ga8cd7287239b4feb3817a2f4210584ead}{T\+I\+M8\+\_\+enable\+\_\+interrupt}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t interrupt)
+\begin{DoxyCompactList}\small\item\em Enable a timer interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_gaa221cfea45d9cd86e0575b5d542320df}{T\+I\+M8\+\_\+disable\+\_\+interrupt}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t interrupt)
+\begin{DoxyCompactList}\small\item\em Disable a timer interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_ga4d02eb0947a9db36b7371e79488d4880}{T\+I\+M8\+\_\+set\+\_\+interrupt\+\_\+callback}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t interrupt, void($\ast$callback)(void))
+\begin{DoxyCompactList}\small\item\em Sets the callback of a timer interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+8-\/bit timer functions 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___t_i_m8_gaa221cfea45d9cd86e0575b5d542320df}\label{group___t_i_m8_gaa221cfea45d9cd86e0575b5d542320df}} 
+\index{8-\/bit timer driver@{8-\/bit timer driver}!T\+I\+M8\+\_\+disable\+\_\+interrupt@{T\+I\+M8\+\_\+disable\+\_\+interrupt}}
+\index{T\+I\+M8\+\_\+disable\+\_\+interrupt@{T\+I\+M8\+\_\+disable\+\_\+interrupt}!8-\/bit timer driver@{8-\/bit timer driver}}
+\subsubsection{\texorpdfstring{T\+I\+M8\+\_\+disable\+\_\+interrupt()}{TIM8\_disable\_interrupt()}}
+{\footnotesize\ttfamily void T\+I\+M8\+\_\+disable\+\_\+interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$}]{timer,  }\item[{T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t}]{interrupt }\end{DoxyParamCaption})}
+
+
+
+Disable a timer interrupt. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer} & pointer to the timer that will be set \\
+\hline
+\mbox{\tt in}  & {\em interrupt} & the interrupt will be disabled\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+To the interrupt be called the global interrupt has to be enabled by calling sei() 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___t_i_m8_ga8cd7287239b4feb3817a2f4210584ead}\label{group___t_i_m8_ga8cd7287239b4feb3817a2f4210584ead}} 
+\index{8-\/bit timer driver@{8-\/bit timer driver}!T\+I\+M8\+\_\+enable\+\_\+interrupt@{T\+I\+M8\+\_\+enable\+\_\+interrupt}}
+\index{T\+I\+M8\+\_\+enable\+\_\+interrupt@{T\+I\+M8\+\_\+enable\+\_\+interrupt}!8-\/bit timer driver@{8-\/bit timer driver}}
+\subsubsection{\texorpdfstring{T\+I\+M8\+\_\+enable\+\_\+interrupt()}{TIM8\_enable\_interrupt()}}
+{\footnotesize\ttfamily void T\+I\+M8\+\_\+enable\+\_\+interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$}]{timer,  }\item[{T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t}]{interrupt }\end{DoxyParamCaption})}
+
+
+
+Enable a timer interrupt. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer} & pointer to the timer that will be set \\
+\hline
+\mbox{\tt in}  & {\em interrupt} & the interrupt will be enabled\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+To the interrupt be called the global interrupt has to be enabled by calling sei() 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___t_i_m8_ga9fc611aa062837337cdfd8a2d3953394}\label{group___t_i_m8_ga9fc611aa062837337cdfd8a2d3953394}} 
+\index{8-\/bit timer driver@{8-\/bit timer driver}!T\+I\+M8\+\_\+set\+\_\+com@{T\+I\+M8\+\_\+set\+\_\+com}}
+\index{T\+I\+M8\+\_\+set\+\_\+com@{T\+I\+M8\+\_\+set\+\_\+com}!8-\/bit timer driver@{8-\/bit timer driver}}
+\subsubsection{\texorpdfstring{T\+I\+M8\+\_\+set\+\_\+com()}{TIM8\_set\_com()}}
+{\footnotesize\ttfamily void T\+I\+M8\+\_\+set\+\_\+com (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$}]{timer,  }\item[{T\+I\+M8\+\_\+\+O\+C\+R\+\_\+t}]{channel,  }\item[{T\+I\+M8\+\_\+\+C\+O\+M\+\_\+t}]{out\+\_\+mode }\end{DoxyParamCaption})}
+
+
+
+Sets the compare match output mode (C\+OM) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer} & pointer to the timer that will be set \\
+\hline
+\mbox{\tt in}  & {\em channel} & the compare output channel that will be set \\
+\hline
+\mbox{\tt in}  & {\em out\+\_\+mode} & compare match output mode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+C\+OM can mean different things according the used W\+GM, see datasheet 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___t_i_m8_gaa68ae4ef1d87bbb8e3b2696de1a4740c}\label{group___t_i_m8_gaa68ae4ef1d87bbb8e3b2696de1a4740c}} 
+\index{8-\/bit timer driver@{8-\/bit timer driver}!T\+I\+M8\+\_\+set\+\_\+cs@{T\+I\+M8\+\_\+set\+\_\+cs}}
+\index{T\+I\+M8\+\_\+set\+\_\+cs@{T\+I\+M8\+\_\+set\+\_\+cs}!8-\/bit timer driver@{8-\/bit timer driver}}
+\subsubsection{\texorpdfstring{T\+I\+M8\+\_\+set\+\_\+cs()}{TIM8\_set\_cs()}}
+{\footnotesize\ttfamily void T\+I\+M8\+\_\+set\+\_\+cs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$}]{timer,  }\item[{T\+I\+M8\+\_\+\+C\+S\+\_\+t}]{clock\+\_\+source }\end{DoxyParamCaption})}
+
+
+
+Sets the clock source (CS) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer} & pointer to the timer that will be set \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+source} & clock source \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___t_i_m8_ga4d02eb0947a9db36b7371e79488d4880}\label{group___t_i_m8_ga4d02eb0947a9db36b7371e79488d4880}} 
+\index{8-\/bit timer driver@{8-\/bit timer driver}!T\+I\+M8\+\_\+set\+\_\+interrupt\+\_\+callback@{T\+I\+M8\+\_\+set\+\_\+interrupt\+\_\+callback}}
+\index{T\+I\+M8\+\_\+set\+\_\+interrupt\+\_\+callback@{T\+I\+M8\+\_\+set\+\_\+interrupt\+\_\+callback}!8-\/bit timer driver@{8-\/bit timer driver}}
+\subsubsection{\texorpdfstring{T\+I\+M8\+\_\+set\+\_\+interrupt\+\_\+callback()}{TIM8\_set\_interrupt\_callback()}}
+{\footnotesize\ttfamily void T\+I\+M8\+\_\+set\+\_\+interrupt\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$}]{timer,  }\item[{T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t}]{interrupt,  }\item[{void($\ast$)(void)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Sets the callback of a timer interrupt. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer} & pointer to the timer that will be set \\
+\hline
+\mbox{\tt in}  & {\em interrupt} & the interrupt will be enabled \\
+\hline
+\mbox{\tt in}  & {\em callback} & pointer to the callback function\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+To the interrupt be called the global interrupt has to be enabled by calling sei() 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___t_i_m8_gac8d83739b9bf78c66d16de8d9a5f3a4e}\label{group___t_i_m8_gac8d83739b9bf78c66d16de8d9a5f3a4e}} 
+\index{8-\/bit timer driver@{8-\/bit timer driver}!T\+I\+M8\+\_\+set\+\_\+wgm@{T\+I\+M8\+\_\+set\+\_\+wgm}}
+\index{T\+I\+M8\+\_\+set\+\_\+wgm@{T\+I\+M8\+\_\+set\+\_\+wgm}!8-\/bit timer driver@{8-\/bit timer driver}}
+\subsubsection{\texorpdfstring{T\+I\+M8\+\_\+set\+\_\+wgm()}{TIM8\_set\_wgm()}}
+{\footnotesize\ttfamily void T\+I\+M8\+\_\+set\+\_\+wgm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$}]{timer,  }\item[{T\+I\+M8\+\_\+\+W\+G\+M\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Sets the waveform generation mode (W\+GM) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer} & pointer to the timer that will be set \\
+\hline
+\mbox{\tt in}  & {\em mode} & W\+GM mode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Both T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+1 and T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+2 will be set as T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+N\+O\+R\+M\+AL 
+\end{DoxyNote}

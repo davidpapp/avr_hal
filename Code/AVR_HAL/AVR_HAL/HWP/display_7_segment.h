@@ -9,6 +9,8 @@
 #ifndef DISPLAY_7_SEGMENT_H_
 #define DISPLAY_7_SEGMENT_H_
 
+#define _DISPLAY_USE_SPI 
+
 void display_7_segment_create();
 void display_7_segment(float value, uint8_t no_of_decimals);
 

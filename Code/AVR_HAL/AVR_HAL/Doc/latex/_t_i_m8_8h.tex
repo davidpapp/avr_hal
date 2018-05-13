@@ -1,0 +1,84 @@
+\hypertarget{_t_i_m8_8h}{}\section{H\+A\+L/\+T\+I\+M8.h File Reference}
+\label{_t_i_m8_8h}\index{H\+A\+L/\+T\+I\+M8.\+h@{H\+A\+L/\+T\+I\+M8.\+h}}
+
+
+Low level library to control the 8-\/bit timers of the A\+T\+M\+E\+G\+A2560.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_i_m8___control__t}{T\+I\+M8\+\_\+\+Control\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_t_i_m8_8h_a9b98a1f3d8a28978d7be8a94b37a2599}\label{_t_i_m8_8h_a9b98a1f3d8a28978d7be8a94b37a2599}} 
+enum {\bfseries T\+I\+M8\+\_\+\+W\+G\+M\+\_\+t} \{ \newline
+{\bfseries T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+N\+O\+R\+M\+AL}, 
+{\bfseries T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+P\+W\+M\+\_\+\+P\+C\+\_\+\+T\+OP}, 
+{\bfseries T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+C\+TC}, 
+{\bfseries T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+F\+A\+S\+T\+\_\+\+P\+W\+M\+\_\+\+T\+OP}, 
+\newline
+{\bfseries T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+1}, 
+{\bfseries T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+P\+W\+M\+\_\+\+P\+C\+\_\+\+O\+C\+RA}, 
+{\bfseries T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+2}, 
+{\bfseries T\+I\+M8\+\_\+\+W\+G\+M\+\_\+\+F\+A\+S\+T\+\_\+\+P\+W\+M\+\_\+\+O\+C\+RA}
+ \}
+\item 
+\mbox{\Hypertarget{_t_i_m8_8h_a57800752d43ed15fe0e3b837b14b4f3b}\label{_t_i_m8_8h_a57800752d43ed15fe0e3b837b14b4f3b}} 
+enum {\bfseries T\+I\+M8\+\_\+\+C\+O\+M\+\_\+t} \{ {\bfseries T\+I\+M8\+\_\+\+C\+O\+M\+\_\+\+N\+O\+R\+M\+AL}, 
+{\bfseries T\+I\+M8\+\_\+\+C\+O\+M\+\_\+\+T\+O\+G\+G\+LE}, 
+{\bfseries T\+I\+M8\+\_\+\+C\+O\+M\+\_\+\+C\+L\+E\+AR}, 
+{\bfseries T\+I\+M8\+\_\+\+C\+O\+M\+\_\+\+S\+ET}
+ \}
+\item 
+\mbox{\Hypertarget{_t_i_m8_8h_ac837402737d3b04ee91afdba010cd596}\label{_t_i_m8_8h_ac837402737d3b04ee91afdba010cd596}} 
+enum {\bfseries T\+I\+M8\+\_\+\+C\+S\+\_\+t} \{ \newline
+{\bfseries T\+I\+M8\+\_\+\+C\+S\+\_\+\+N\+O\+\_\+\+C\+LK}, 
+{\bfseries T\+I\+M8\+\_\+\+C\+S\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V1}, 
+{\bfseries T\+I\+M8\+\_\+\+C\+S\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V8}, 
+{\bfseries T\+I\+M8\+\_\+\+C\+S\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V64}, 
+\newline
+{\bfseries T\+I\+M8\+\_\+\+C\+S\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V256}, 
+{\bfseries T\+I\+M8\+\_\+\+C\+S\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V1024}, 
+{\bfseries T\+I\+M8\+\_\+\+C\+S\+\_\+\+E\+X\+T\+\_\+\+F\+A\+L\+L\+I\+NG}, 
+{\bfseries T\+I\+M8\+\_\+\+C\+S\+\_\+\+E\+X\+T\+\_\+\+R\+I\+S\+I\+NG}
+ \}
+\item 
+\mbox{\Hypertarget{_t_i_m8_8h_af319034188319e04cc9552c7917507d8}\label{_t_i_m8_8h_af319034188319e04cc9552c7917507d8}} 
+enum {\bfseries T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t} \{ {\bfseries T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+\+O\+V\+E\+R\+F\+L\+OW}, 
+{\bfseries T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+\+O\+C\+R\+\_\+\+A\+\_\+\+M\+A\+T\+CH}, 
+{\bfseries T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+\+O\+C\+R\+\_\+\+B\+\_\+\+M\+A\+T\+CH}
+ \}
+\item 
+\mbox{\Hypertarget{_t_i_m8_8h_abd2aabee868b5c1572af4892c8aaa27b}\label{_t_i_m8_8h_abd2aabee868b5c1572af4892c8aaa27b}} 
+enum {\bfseries T\+I\+M8\+\_\+\+O\+C\+R\+\_\+t} \{ {\bfseries T\+I\+M8\+\_\+\+O\+C\+R\+\_\+A}, 
+{\bfseries T\+I\+M8\+\_\+\+O\+C\+R\+\_\+B}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___t_i_m8_gac8d83739b9bf78c66d16de8d9a5f3a4e}{T\+I\+M8\+\_\+set\+\_\+wgm}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+W\+G\+M\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Sets the waveform generation mode (W\+GM) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_gaa68ae4ef1d87bbb8e3b2696de1a4740c}{T\+I\+M8\+\_\+set\+\_\+cs}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+C\+S\+\_\+t clock\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Sets the clock source (CS) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_ga9fc611aa062837337cdfd8a2d3953394}{T\+I\+M8\+\_\+set\+\_\+com}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+O\+C\+R\+\_\+t channel, T\+I\+M8\+\_\+\+C\+O\+M\+\_\+t out\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Sets the compare match output mode (C\+OM) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_ga8cd7287239b4feb3817a2f4210584ead}{T\+I\+M8\+\_\+enable\+\_\+interrupt}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t interrupt)
+\begin{DoxyCompactList}\small\item\em Enable a timer interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_gaa221cfea45d9cd86e0575b5d542320df}{T\+I\+M8\+\_\+disable\+\_\+interrupt}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t interrupt)
+\begin{DoxyCompactList}\small\item\em Disable a timer interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m8_ga4d02eb0947a9db36b7371e79488d4880}{T\+I\+M8\+\_\+set\+\_\+interrupt\+\_\+callback}} (\mbox{\hyperlink{struct_t_i_m8__t}{T\+I\+M8\+\_\+t}} $\ast$timer, T\+I\+M8\+\_\+\+I\+R\+Q\+\_\+t interrupt, void($\ast$callback)(void))
+\begin{DoxyCompactList}\small\item\em Sets the callback of a timer interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Low level library to control the 8-\/bit timers of the A\+T\+M\+E\+G\+A2560. 
+
+\begin{DoxyAuthor}{Author}
+David Papp 8-\/bit timer definitions 
+\end{DoxyAuthor}

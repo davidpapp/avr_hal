@@ -15,77 +15,37 @@
 #include "HWP/key.h"
 #include "HWP/display_7_segment.h"
 
-//const uint8_t _digits[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90, 0x88, 0x83, 0xC6, 0xA1, 0x86, 0x8E};
-
-static int8_t _rc_servo_position = 0;
-static volatile SPI_t *_spi = ((SPI_t*) 0x4C);
-static uint8_t _display[4] = {0x00};
-static uint8_t _display_position = 0;
-
+static uint8_t _number_of_decimals = 2;
 
 void key_callback(uint8_t key)
 {
-	if (key == EXT_INT_2)
+	if (key == EXT_INT_3)
 	{
-		_rc_servo_position -= 10;
-		if (_rc_servo_position < -100)
+		if (_number_of_decimals < 3)
 		{
-			_rc_servo_position = -100;
+			_number_of_decimals++;
 		}
 	}
-	else if (key == EXT_INT_3)
+	else if (key == EXT_INT_2)
 	{
-		_rc_servo_position += 10;
-		if (_rc_servo_position > 100)
+		if (_number_of_decimals > 0)
 		{
-			_rc_servo_position = 100;
+			_number_of_decimals--;
 		}
+		
 	}
-	rc_servo(_rc_servo_position);
-}
-
-void spi_callback(void)
-{
-	GPIOF->PORT |= 0xFF;
-
-	GPIOB->PORT |= 0x01;
-	GPIOB->PORT &= 0xFE;
-	GPIOF->PORT &= ~(1 << (_display_position%4));
-
-	_display_position++;
-	_spi->SPI_SPDR = _display[_display_position%4];
-
+	display_7_segment(3.1415926, _number_of_decimals);
 }
 
 int main(void)
 {
-	/*
+	
 	key_create(key_callback);
 
-	rc_servo_create();
-	rc_servo(_rc_servo_position);
-	
-	
-	GPIOB->DDR |= 0x07;
-	GPIOF->DDR |= 0x0F;
-
-	GPIOB->PORT |= 0x01;
-	GPIOF->PORT |= 0xFF;
-	GPIOF->PORT &= 0xFE;
-
-	SPI_enable_interrupt(_spi);
-	SPI_set_data_order_MSB(_spi);
-	SPI_set_master(_spi);
-	SPI_set_mode(_spi, SPI_MODE_SETUP_FALLING_SAMPLE_RISING);
-	SPI_set_clock_rate(_spi, SPI_SCK_CLK_DIV128);
-	SPI_set_callback(spi_callback);
-	SPI_enable(_spi);
-	*/
 	display_7_segment_create();
 
 	sei();
-	display_7_segment(3145.126, 0);
-	//_spi->SPI_SPDR = _display[0xFF];
+	display_7_segment(3.1415926, _number_of_decimals);
 
     while (1) 
     {

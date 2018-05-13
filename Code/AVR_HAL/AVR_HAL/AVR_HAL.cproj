@@ -174,7 +174,7 @@
     <Compile Include="HAL\TIM8.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HWP\display_7_segment_soft.c">
+    <Compile Include="HWP\display_7_segment.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HWP\display_7_segment.h">

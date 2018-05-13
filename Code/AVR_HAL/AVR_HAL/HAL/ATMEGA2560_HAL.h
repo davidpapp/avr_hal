@@ -10,6 +10,7 @@
 #define ATMEGA2560_HAL_H_
 
 #include <stddef.h>
+#include "SPI.h"
 #include "TIM16.h"
 #include "TIM8.h"
 
@@ -21,5 +22,6 @@ extern volatile TIM16_t _TIM16_5;
 
 extern volatile TIM8_t _TIM8_0;
 
+extern volatile SPI_t *_SPI;
 
 #endif /* ATMEGA2560_HAL_H_ */

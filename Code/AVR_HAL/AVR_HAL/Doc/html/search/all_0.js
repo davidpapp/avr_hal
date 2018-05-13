@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gpio_5ft',['GPIO_t',['../struct_g_p_i_o__t.html',1,'']]]
+  ['7_2dsegment_20display_20driver',['7-segment display driver',['../group__display.html',1,'']]]
 ];
